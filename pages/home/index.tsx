@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { GetStaticPathsContext, GetStaticPropsContext } from 'next'
+import { Typography } from '@mui/material';
 
 export default function Home({ post}: any) {
   return (
@@ -13,6 +14,7 @@ export default function Home({ post}: any) {
       </Head>
       <main>
         <div>
+          <Typography component='h1' variant='h3' color='primary.main'>Home page</Typography>
           <p>
             Home Ids {post}
           </p>
