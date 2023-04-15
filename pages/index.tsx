@@ -1,11 +1,15 @@
+import Banner from '@/components/templates/Banner';
+import Products from '@/components/templates/Products';
+import MainLayout from '@/components/templates/layouts/MainLayout';
 import { Box } from '@mui/material';
 
-const Home: React.FC = () => {
+export default function Home(){
   return (
     <Box className='p-home'>
-      Home page
+      <Banner />
+      <Products />
     </Box>
   )
 }
 
-export default Home;
+Home.Layout = MainLayout;

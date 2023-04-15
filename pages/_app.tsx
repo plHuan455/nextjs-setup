@@ -1,5 +1,5 @@
 import { EmptyLayout } from '@/components/templates/layouts';
-import '@/styles/globals.css'
+import '@/styles/common.scss';
 import createEmotionCache from '@/utility/createEmotionCache';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
@@ -32,7 +32,7 @@ interface CusAppProps extends AppProps {
 }
 
 export default function App({ Component, pageProps, emotionCache = clientSideEmotionCache }: CusAppProps) {
-  const Layout = Component.Layout ?? EmptyLayout
+  const Layout = Component.Layout ?? EmptyLayout;
   
   return (
     <CacheProvider value={emotionCache}>
