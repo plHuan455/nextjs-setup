@@ -12,11 +12,15 @@ export interface HeaderMenuItemTypes {
 interface HeaderProp {
   menuList: HeaderMenuItemTypes[];
   onSearchChange?: (value: string) => void;
+  onCartClick: () => void;
+  onLogoClick?: () => void;
 }
 
 const Header: React.FC<HeaderProp> = ({
   menuList,
   onSearchChange,
+  onCartClick,
+  onLogoClick,
 }) => {
   return (
     <Box className='o-header'>
@@ -25,7 +29,8 @@ const Header: React.FC<HeaderProp> = ({
           sx={{ display: 'flex', justifyContent: 'space-between' }}
         >
           <Box className='o-Header_logo'
-            sx={{ display: 'flex', gap: rem(14), alignItems: 'center' }}
+            sx={{ display: 'flex', gap: rem(14), alignItems: 'center', cursor: 'pointer' }}
+            onClick={onLogoClick}
           >
             <Box component='img' src={startBucksLogo.src} alt=''
               sx={{ width: rem(77), height: rem(77) }}
@@ -56,7 +61,7 @@ const Header: React.FC<HeaderProp> = ({
             sx={{ display: 'flex', alignItems: 'center', gap: rem(42) }}
           >
             <SearchInput value='' placeholder='Search' onChange={onSearchChange} />
-            <Button sx={{ minWidth: 0, borderRadius: '50%' }}>
+            <Button sx={{ minWidth: 0, borderRadius: '50%' }} onClick={onCartClick}>
               <Badge badgeContent={1} color="secondary">
                 <LocalGroceryStoreOutlinedIcon sx={{ color: 'black', fontSize: rem(25) }} />
               </Badge>

@@ -1,0 +1,16 @@
+import React from 'react';
+import { Box, SxProps, Theme } from '@mui/material';
+
+export interface {{pascalCase name}}Props {
+  sx?: SxProps<Theme>;
+}
+
+export default function {{pascalCase name}}({ sx }: {{pascalCase name}}Props) {
+  return (
+    <Box className="{{classNameComponent type}}{{camelCase name}}"
+      sx={{...sx}}
+    >
+      {{pascalCase name}} test
+    </Box>
+  )
+};
