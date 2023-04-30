@@ -189,7 +189,7 @@ export default function Cart({
                         Subtotal:
                       </Typography>
                       <Typography sx={{ fontSize: rem(18), color: 'text.primary', fontWeight: 600 }}>
-                        {getTotalPrice(cartValue)}
+                        {numberToMoneyFormat(getTotalPrice(cartValue))}
                       </Typography>
                     </Stack>
                     <Stack direction={'row'} justifyContent={'space-between'} sx={{ mt: rem(8) }}>
@@ -218,7 +218,7 @@ export default function Cart({
                       Total:
                     </Typography>
                     <Typography sx={{ fontSize: rem(18), color: 'text.primary', fontWeight: 800 }}>
-                      {getTotalPrice(cartValue)}
+                      {numberToMoneyFormat(getTotalPrice(cartValue))}
                     </Typography>
                   </Stack>
                 </Stack>
